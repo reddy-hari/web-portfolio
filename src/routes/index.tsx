@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import NotFound from "../common/NotFound";
 import Home from "../pages/Home";
-import About from "../pages/About";
+import Folio from "../pages/Folio";
 import Resume from "../pages/Resume";
 import App from "../App";
 
@@ -20,8 +20,8 @@ const routes = [
         element: <Resume />,
       },
       {
-        path: "/about",
-        element: <About />,
+        path: "/folio",
+        element: <Folio />,
       },
     ],
   },

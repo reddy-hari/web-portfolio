@@ -1,10 +1,14 @@
 /** Social Media Links */
-export const socialMediaLink = {
-  youtube: "https://www.youtube.com/channel/UCcU3V5tJelRJbQ9OlNwWIvg",
-  instagram: "https://www.instagram.com/kreativemanifests/",
-  twitter: "https://twitter.com/harireddy05",
+export const socialMediaLinks = {
   github: "https://github.com/reddy-hari",
-  "500px": "https://500px.com/p/hari_reddy",
+  linkedin: "https://www.linkedin.com/in/reddyharikrishna/",
+  "stack overflow": "https://stackoverflow.com/users/16372970/hari-reddy",
+  "500px": "https://500px.com/p/hari_reddy?view=galleries",
+  medium: "https://medium.com/@harireddy05",
+  youtube: "https://www.youtube.com/channel/UCcU3V5tJelRJbQ9OlNwWIvg",
+  instagram: "https://www.instagram.com/_harireddy_/",
+  twitter: "https://twitter.com/harireddy05",
+  facebook: "https://www.facebook.com/harireddy05",
 };
 
 /** RSS To JSON URL */

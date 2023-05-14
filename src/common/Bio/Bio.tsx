@@ -1,7 +1,7 @@
 import React from "react";
-import { Icon, SemanticCOLORS, SemanticICONS } from "semantic-ui-react";
+import { Icon, Menu, SemanticCOLORS, SemanticICONS } from "semantic-ui-react";
 import { IconSizeProp } from "semantic-ui-react/dist/commonjs/elements/Icon/Icon";
-import { color, size, socialMediaLink } from "../../constants/constants";
+import { color, size, socialMediaLinks } from "../../constants/constants";
 import DisplayPhoto from "../DisplayPhoto/DisplayPhoto";
 
 /* Alternate temporary fix for the React and Seamtic UI version support differences: */
@@ -32,21 +32,25 @@ const Bio = () => {
           style={{
             display: "flex",
             justifyContent: "center",
-            marginTop: "3em",
-            marginBottom: "2em",
+            marginTop: "1em",
+            marginBottom: "1em",
           }}
         >
-          Nomad in ways, sharing a story or two!
+          <Menu text>
+            <Menu.Item>Engineer</Menu.Item>
+            <Menu.Item>Artist</Menu.Item>
+            <Menu.Item>Philosopher</Menu.Item>
+          </Menu>
         </div>
         <div
           style={{
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            gap: "2em",
+            gap: "1em",
           }}
         >
-          {Object.entries(socialMediaLink).map((sm, i) => {
+          {Object.entries(socialMediaLinks).map((sm, i) => {
             let [key, value] = sm;
             return (
               <Icon

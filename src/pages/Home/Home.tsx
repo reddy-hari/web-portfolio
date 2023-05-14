@@ -14,9 +14,11 @@ function Home() {
   return (
     <div>
       <Navigation />
-      <h1>Home: {counter}</h1>
-      <button onClick={() => dispatch(increment())}>+</button>
-      <button onClick={() => dispatch(decrement())}>-</button>
+      <section style={{ padding: "1em" }}>
+        <h1>Home: {counter}</h1>
+        <button onClick={() => dispatch(increment())}>+</button>
+        <button onClick={() => dispatch(decrement())}>-</button>
+      </section>
     </div>
   );
 }
