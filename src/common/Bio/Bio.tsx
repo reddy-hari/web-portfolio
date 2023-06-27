@@ -1,4 +1,3 @@
-import React from "react";
 import { Icon, Menu, SemanticCOLORS, SemanticICONS } from "semantic-ui-react";
 import { IconSizeProp } from "semantic-ui-react/dist/commonjs/elements/Icon/Icon";
 import { color, size, socialMediaLinks } from "../../constants/constants";
