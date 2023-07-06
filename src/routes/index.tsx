@@ -4,6 +4,7 @@ import Home from "../pages/Home";
 import Folio from "../pages/Folio";
 import Resume from "../pages/Resume";
 import App from "../App";
+import Blog from "../pages/Blog";
 
 const routes = [
   {
@@ -18,6 +19,14 @@ const routes = [
       {
         path: "/resume",
         element: <Resume />,
+      },
+      {
+        path: "/cv",
+        element: <Resume />,
+      },
+      {
+        path: "/blog",
+        element: <Blog />,
       },
       {
         path: "/folio",

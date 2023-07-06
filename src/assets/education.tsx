@@ -5,11 +5,10 @@ export const degrees = [
     major: "Computer Science & Engineering",
     graduated: "2019",
     accolades: [
-      "Make My Movie 2.0 Winner @ Kanishk 2014",
-      "Table Tennis Runner Up @ Sangarsh 2014",
-      "Cultural Debate Runner Up @ MESA 2013",
+      "1400 NCTTA Rating @ Texas Wesleyan Tournament 2019",
+      "The ShortHorn Student Newspaper Columnist",
+      "Food Service Worker",
     ],
-    projects: ["Health Dashboard"],
   },
   {
     university: "University of Puné",
@@ -17,11 +16,10 @@ export const degrees = [
     major: "Computer Engineering",
     graduated: "2014",
     accolades: [
-      "1400 NCTTA Rating @ Texas Wesleyan Tournament",
-      "The ShortHorn Student Newspaper Columnist",
-      "Food Service Worker",
+      "Make My Movie 2.0 Winner @ Kanishk 2014",
+      "Table Tennis Runner Up @ Sangarsh 2014",
+      "Cultural Debate Runner Up @ MESA 2013",
     ],
-    projects: ["Automated Script for LinkedIn Easy Apply"],
   },
 ];
 

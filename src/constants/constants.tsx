@@ -35,9 +35,28 @@ export const ID = {
 /** Colors */
 export const color = {
   black: "black",
+  white: "white",
+  red: "red",
+  gray: "#181A1B",
+  lightgray: "#D3D3D3",
+  maroon: "#A40423",
+  brightblue: "#84A6CB",
+  lightblue: "#3777A5",
+  neongreen: "#39FF14",
+  neonblue: "#1B03A3",
+  cyan: "cyan",
+  charcoal: "#36454F",
+  accentyellow: "#F7B603",
+  neoncyan: "#00FEFC",
 };
 
 /** Sizes */
 export const size = {
+  mini: "mini",
+  tiny: "tiny",
+  small: "small",
+  large: "large",
   big: "big",
+  huge: "huge",
+  massive: "massive",
 };

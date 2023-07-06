@@ -3,7 +3,7 @@ import Navigation from "../../common/Navigation";
 import { toggleDarkTheme } from "../../reducers/theme/themeSlice";
 import { RootState } from "../../store/store";
 
-function Home() {
+function Blog() {
   const darkTheme = useSelector((state: RootState) => state.theme);
   const dispatch = useDispatch();
 
@@ -11,10 +11,8 @@ function Home() {
     <div>
       <Navigation />
       <section style={{ padding: "1em" }}>
-        <h1>Home</h1>
-        <button onClick={() => dispatch(toggleDarkTheme())}>
-          {darkTheme.dark.toString()}
-        </button>
+        <h1>Blog</h1>
+        
         <a href="https://medium.com/hwoeirudf">fake</a>
         <a href="https://medium.com/">real</a>
       </section>
@@ -22,4 +20,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Blog;

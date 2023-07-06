@@ -1,10 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { useDispatch } from 'react-redux';
-import counterSlice from '../reducers/counterReducer/counterSlice';
+import themeSlice from '../reducers/theme/themeSlice';
 
 const store = configureStore({
   reducer: {
-    counter: counterSlice
+    theme: themeSlice
   },
 });
 
