@@ -1,13 +1,13 @@
 import { Outlet } from "react-router-dom";
-import ThemeWrapper from "./common/ThemeWrapper";
+import Wrapper from "./common/Wrapper";
 
 function App() {
   return (
-    <div>
-      <ThemeWrapper>
+    <>
+      <Wrapper>
         <Outlet />
-      </ThemeWrapper>
-    </div>
+      </Wrapper>
+    </>
   );
 }
 

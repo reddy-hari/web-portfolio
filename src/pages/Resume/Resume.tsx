@@ -5,8 +5,9 @@ const Resume = () => {
   return (
     <div>
       <Navigation />
-      Resume
-      <div>resume</div>
+      <section style={{ padding: "1em" }}>
+        Resume
+      </section>
     </div>
   );
 };

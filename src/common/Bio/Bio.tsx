@@ -1,14 +1,12 @@
-import { Icon, Menu, SemanticCOLORS, SemanticICONS } from "semantic-ui-react";
+import { useSelector } from "react-redux";
+import { Icon, Menu, SemanticICONS } from "semantic-ui-react";
 import { IconSizeProp } from "semantic-ui-react/dist/commonjs/elements/Icon/Icon";
-import { color, size, socialMediaLinks } from "../../constants/constants";
+import { size, socialMediaLinks } from "../../constants/constants";
+import { RootState } from "../../store/store";
 import DisplayPhoto from "../DisplayPhoto/DisplayPhoto";
 
-/* Alternate temporary fix for the React and Seamtic UI version support differences: */
-// import { ComponentType } from "react";
-// import { Table as _Table, TableProps } from "semantic-ui-react";
-// const Table = _Table as ComponentType<TableProps>
-
 const Bio = () => {
+  const darkTheme = useSelector((state: RootState) => state.theme);
   const openLink = (url: string | URL | undefined) => {
     window.open(url);
   };
@@ -35,10 +33,12 @@ const Bio = () => {
             marginBottom: "1em",
           }}
         >
-          <Menu text>
+          <Menu text inverted={darkTheme.dark}>
             <Menu.Item>Engineer</Menu.Item>
-            <Menu.Item>Artist</Menu.Item>
+            <Menu.Item>•</Menu.Item>
             <Menu.Item>Philosopher</Menu.Item>
+            <Menu.Item>•</Menu.Item>
+            <Menu.Item>Artist</Menu.Item>
           </Menu>
         </div>
         <div
@@ -56,7 +56,7 @@ const Bio = () => {
                 key={key}
                 name={key as SemanticICONS}
                 size={size.big as IconSizeProp}
-                color={color.black as SemanticCOLORS}
+                inverted={darkTheme.dark}
                 link
                 onClick={() => openLink(value)}
               />
