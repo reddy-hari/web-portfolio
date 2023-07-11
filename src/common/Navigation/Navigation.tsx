@@ -50,7 +50,7 @@ const Navigation = () => {
               />
             ) : (
               <Icon
-                name="sun"
+                name="adjust"
                 size={size.small as IconSizeProp}
                 color={color.black as SemanticCOLORS}
                 link
