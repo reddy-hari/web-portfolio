@@ -43,17 +43,13 @@ const Bio = () => {
                       e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
                     ) => {
                       const target = e.currentTarget as HTMLAnchorElement;
-                      target.style.color = darkTheme.dark
-                        ? color.red
-                        : color.black;
+                      target.style.fontWeight = "bold";
                     }}
                     onMouseLeave={(
                       e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
                     ) => {
                       const target = e.currentTarget as HTMLAnchorElement;
-                      target.style.color = darkTheme.dark
-                        ? color.white
-                        : color.charcoal;
+                      target.style.fontWeight = "normal";
                     }}
                   >
                     {fd}
@@ -84,20 +80,6 @@ const Bio = () => {
                 inverted={darkTheme.dark}
                 link
                 onClick={() => openLink(value)}
-                onMouseEnter={(
-                  e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
-                ) => {
-                  const target = e.currentTarget as HTMLAnchorElement;
-                  target.style.color = darkTheme.dark ? color.maroon : color.black;
-                }}
-                onMouseLeave={(
-                  e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
-                ) => {
-                  const target = e.currentTarget as HTMLAnchorElement;
-                  target.style.color = darkTheme.dark
-                    ? color.white
-                    : color.charcoal;
-                }}
               />
             );
           })}

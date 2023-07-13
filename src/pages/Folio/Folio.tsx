@@ -22,12 +22,6 @@ const Folio = () => {
           left: 0,
           width: "100%",
           textAlign: "center",
-          borderTop: darkTheme.dark
-            ? `0.1px solid ${color.charcoal}`
-            : `0.1px solid ${color.gray}`,
-          backgroundColor: darkTheme.dark
-            ? "rgba(24, 26, 27, 1)"
-            : "rgba(255, 255, 255, 1)",
           padding: ".25em 0",
         }}
       >
@@ -46,7 +40,7 @@ const Folio = () => {
             const target = e.currentTarget as HTMLAnchorElement;
             target.style.color = darkTheme.dark
               ? color.lightgray
-              : color.accentyellow;
+              : color.black;
           }}
           onMouseLeave={(
             e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
@@ -54,7 +48,7 @@ const Folio = () => {
             const target = e.currentTarget as HTMLAnchorElement;
             target.style.color = darkTheme.dark
               ? color.charcoal
-              : color.charcoal;
+              : color.gray;
           }}
         >
           <Icon name="home" size={size.small as IconSizeProp} link></Icon>
