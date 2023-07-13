@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { Icon, Menu, SemanticICONS } from "semantic-ui-react";
 import { IconSizeProp } from "semantic-ui-react/dist/commonjs/elements/Icon/Icon";
-import { size, socialMediaLinks } from "../../constants/constants";
+import { color, size, socialMediaLinks } from "../../constants/constants";
 import { RootState } from "../../store/store";
 import DisplayPhoto from "../DisplayPhoto/DisplayPhoto";
 
@@ -10,6 +10,7 @@ const Bio = () => {
   const openLink = (url: string | URL | undefined) => {
     window.open(url);
   };
+  const folioDescriptions = ["Engineer", "Philosopher", "Artist"];
 
   return (
     <div>
@@ -34,11 +35,35 @@ const Bio = () => {
           }}
         >
           <Menu text inverted={darkTheme.dark}>
-            <Menu.Item>Engineer</Menu.Item>
-            <Menu.Item>•</Menu.Item>
-            <Menu.Item>Philosopher</Menu.Item>
-            <Menu.Item>•</Menu.Item>
-            <Menu.Item>Artist</Menu.Item>
+            {folioDescriptions.map((fd, i) => {
+              return (
+                <>
+                  <Menu.Item
+                    onMouseEnter={(
+                      e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+                    ) => {
+                      const target = e.currentTarget as HTMLAnchorElement;
+                      target.style.color = darkTheme.dark
+                        ? color.red
+                        : color.black;
+                    }}
+                    onMouseLeave={(
+                      e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+                    ) => {
+                      const target = e.currentTarget as HTMLAnchorElement;
+                      target.style.color = darkTheme.dark
+                        ? color.white
+                        : color.charcoal;
+                    }}
+                  >
+                    {fd}
+                  </Menu.Item>
+                  {i !== folioDescriptions.length - 1 ? (
+                    <Menu.Item>•</Menu.Item>
+                  ) : null}
+                </>
+              );
+            })}
           </Menu>
         </div>
         <div
@@ -59,6 +84,20 @@ const Bio = () => {
                 inverted={darkTheme.dark}
                 link
                 onClick={() => openLink(value)}
+                onMouseEnter={(
+                  e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+                ) => {
+                  const target = e.currentTarget as HTMLAnchorElement;
+                  target.style.color = darkTheme.dark ? color.maroon : color.black;
+                }}
+                onMouseLeave={(
+                  e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+                ) => {
+                  const target = e.currentTarget as HTMLAnchorElement;
+                  target.style.color = darkTheme.dark
+                    ? color.white
+                    : color.charcoal;
+                }}
               />
             );
           })}

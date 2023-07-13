@@ -2,12 +2,10 @@ import { createSlice } from "@reduxjs/toolkit";
 
 interface ThemeState {
   dark: boolean;
-  light: boolean;
 }
 
 const initialState: ThemeState = {
-  dark: false,
-  light: true,
+  dark: localStorage.getItem("theme") === "dark",
 };
 
 export const themeSlice = createSlice({
@@ -16,12 +14,16 @@ export const themeSlice = createSlice({
   reducers: {
     setDarkTheme: (state) => {
       state.dark = true;
+      localStorage.setItem("theme", "dark");
     },
     setLightTheme: (state) => {
-      state.light = true;
+      state.dark = false;
+      localStorage.setItem("theme", "light");
     },
+
     toggleDarkTheme: (state) => {
       state.dark = !state.dark;
+      localStorage.setItem("theme", state.dark ? "dark" : "light");
     },
   },
 });
