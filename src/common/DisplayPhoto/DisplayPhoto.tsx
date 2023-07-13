@@ -21,8 +21,8 @@ export default function DisplayPhoto(props: IDPProps) {
       onMouseEnter={(e: React.MouseEvent<HTMLDivElement>) => {
         const target = e.target as HTMLDivElement;
         target.style.boxShadow = darkTheme.dark
-          ? `0px 0px 50px ${color.lightblue}`
-          : `0px 0px 50px ${color.lightblue}`;
+          ? `0px 0px 25px ${color.neoncyan}`
+          : `0px 0px 25px ${color.neoncyan}`;
         target.style.borderRadius = "50%";
       }}
       onMouseLeave={(e: React.MouseEvent<HTMLDivElement>) => {
