@@ -15,6 +15,8 @@ function Home() {
         <button onClick={() => dispatch(toggleDarkTheme())}>
           {darkTheme.dark.toString()}
         </button>
+        <a href="https://medium.com/hwoeirudf">fake</a>
+        <a href="https://medium.com/">real</a>
       </section>
     </div>
   );

@@ -1,14 +1,17 @@
 import finra from "./companyLogos/finra.png";
 import microsoft from "./companyLogos/microsoft.png";
-import utari from "./companyLogos/utari.jpg";
+import utari from "./companyLogos/utari.png";
 import allianz from "./companyLogos/allianz.png";
 import gomo from "./companyLogos/gomo.png";
 
 export const workExperience = [
   {
     company: "Financial Industry Regulatory Authority",
+    payroll: "Unisys",
     title: "Full Stack Developer",
     jobType: "Contract",
+    start: new Date("March 2022"),
+    end: null,
     roles: [
       "Implementation of User Stories, Bug fixes and Feature enhancements for the FINRA Data Services and FINRA Analytics Solution Tool (FAST) Applications.",
       "Using React, TypeScript and Redux-Thunk to create Stateful Front End Components to fulfil feature stories and implementing hotfixes.",
@@ -22,8 +25,11 @@ export const workExperience = [
   },
   {
     company: "Microsoft",
+    payroll: "Infosys",
     title: "Software Development Engineer",
     jobType: "Contract",
+    start: new Date("March 2020"),
+    end: new Date("March 2022"),
     roles: [
       "Web Development of the Portals Product within the Microsoft Dynamics 365 XRM Suite using React and Fluent UI",
       "Implemented Feature Fixes for D365 Portals that serves as a B2B product built in React, Redux and TypeScript.",
@@ -38,6 +44,8 @@ export const workExperience = [
     company: "The University of Texas at Arlington Research Institute",
     title: "UI UX Developer",
     jobType: "Part Time",
+    start: new Date("April 2019"),
+    end: new Date("March 2020"),
     roles: [
       "Web App Development of Patient Data Reporting and Analytics using React and Java Spring Boot",
       "Implemented a web portal for an online view of data reports and graph analytics using React, Java and MySQL.",
@@ -49,8 +57,11 @@ export const workExperience = [
   },
   {
     company: "Allianz",
+    payroll: "Accenture",
     title: "Software Development Engineer",
     jobType: "Contract",
+    start: new Date("May 2015"),
+    end: new Date("December 2017"),
     roles: [
       "Web development for Auto Insurance Systems using React and Node JS",
       "Developed features within the Allianz Auto Insurance Systems for use across Europe.",
@@ -64,8 +75,11 @@ export const workExperience = [
   },
   {
     company: "GO MO Group",
+    payroll: "Wondersoft Multimedia Solutions",
     title: "Web Developer",
     jobType: "Contract",
+    start: new Date("June 2014"),
+    end: new Date("May 2015"),
     roles: [
       "Developed UI, cross-browser compatibility, created content, general web functions while maintaining client standards.",
       "Responsible web applications design with SASS & CSS with dynamic behavior such as variables, operations & functions.",

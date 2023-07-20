@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { Icon, Menu, SemanticICONS } from "semantic-ui-react";
 import { IconSizeProp } from "semantic-ui-react/dist/commonjs/elements/Icon/Icon";
-import { color, size, socialMediaLinks } from "../../constants/constants";
+import { size, socialMediaLinks } from "../../constants/constants";
 import { RootState } from "../../store/store";
 import DisplayPhoto from "../DisplayPhoto/DisplayPhoto";
 
