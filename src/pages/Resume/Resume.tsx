@@ -51,50 +51,66 @@ const Resume = () => {
                   <Item key={ex.company + index}>
                     <Item.Image size="tiny" src={ex.logo} />
                     <Item.Content>
-                      <Item.Meta>
-                        <Grid columns="equal">
-                          <Grid.Row>
-                            <Grid.Column>
-                              <span
-                                style={{
-                                  fontSize: "1.5em",
-                                  color: darkTheme.dark
-                                    ? color.white
-                                    : color.charcoal,
-                                }}
-                              >
-                                {ex.company}
+                      <Item.Meta
+                        style={{
+                          color: darkTheme.dark ? color.white : color.charcoal,
+                          display: "flex",
+                          justifyContent: "space-between",
+                        }}
+                      >
+                        <span
+                          style={{
+                            fontSize: "1.5em",
+                            color: darkTheme.dark
+                              ? color.white
+                              : color.charcoal,
+                          }}
+                        >
+                          {ex.company}
+                        </span>
+                        <span style={{ fontSize: ".9em" }}>{ex.title}</span>
+                      </Item.Meta>
+                      <Item.Meta
+                        style={{
+                          color: darkTheme.dark ? color.white : color.charcoal,
+                          fontSize: ".8em",
+                          paddingTop: ".5em",
+                          paddingBottom: ".25em",
+                          display: "flex",
+                          justifyContent: "space-between",
+                        }}
+                      >
+                        <span>
+                          <Icon name={"checked calendar" as SemanticICONS} />
+                          {ex.end
+                            ? ` ${ex.start.toLocaleString("en-US", {
+                                month: "long",
+                                year: "numeric",
+                              })} - ${ex.end.toLocaleString("en-US", {
+                                month: "long",
+                                year: "numeric",
+                              })}`
+                            : ` Since ${ex.start.toLocaleString("en-US", {
+                                month: "long",
+                                year: "numeric",
+                              })}`}
+                        </span>
+                        <span style={{ flex: 1, textAlign: "right" }}>
+                          <span
+                            style={{
+                              color: darkTheme.dark
+                                ? color.white
+                                : color.charcoal,
+                            }}
+                          >
+                            <span>{ex.jobType}</span>
+                            {ex.payroll ? (
+                              <span style={{ fontSize: ".79em" }}>
+                                {`| via ${ex.payroll}`}
                               </span>
-                              <span
-                                style={{
-                                  fontSize: ".9em",
-                                  color: darkTheme.dark
-                                    ? color.white
-                                    : color.charcoal,
-                                }}
-                              >
-                                {ex.title}
-                              </span>
-                            </Grid.Column>
-                            <Grid.Column
-                              textAlign="right"
-                              style={{
-                                color: darkTheme.dark
-                                  ? color.white
-                                  : color.charcoal,
-                              }}
-                            >
-                              <span style={{ fontSize: ".8em" }}>
-                                {ex.jobType}
-                              </span>
-                              {ex.payroll ? (
-                                <span style={{ fontSize: ".7em" }}>
-                                  via {ex.payroll}
-                                </span>
-                              ) : null}
-                            </Grid.Column>
-                          </Grid.Row>
-                        </Grid>
+                            ) : null}
+                          </span>
+                        </span>
                       </Item.Meta>
                       <Item.Description>
                         <List bulleted>
