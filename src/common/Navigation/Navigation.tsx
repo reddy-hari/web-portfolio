@@ -28,8 +28,8 @@ const Navigation = () => {
         </Menu.Menu>
 
         <Menu.Menu>
-          <Link to="/resume">
-            <Menu.Item name="Resume">Resume</Menu.Item>
+          <Link to="/blog">
+            <Menu.Item name="Blog">Blog</Menu.Item>
           </Link>
         </Menu.Menu>
 
