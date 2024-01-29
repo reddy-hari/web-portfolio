@@ -1,6 +1,6 @@
 import React from "react";
 import { Image, SemanticSIZES } from "semantic-ui-react";
-import dp from "../../assets/hari.jpg";
+import dp from "../../assets/hari.png";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store/store";
 import { color } from "../../constants/constants";

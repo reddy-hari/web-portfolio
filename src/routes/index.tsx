@@ -14,7 +14,8 @@ const routes = [
     children: [
       {
         path: "/",
-        element: <Home />,
+        element: <Folio />,
+        // element: <Home />,
       },
       {
         path: "/resume",

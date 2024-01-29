@@ -28,8 +28,8 @@ const Folio = () => {
       >
         <Menu.Item
           as={Link}
-          to="/"
-          name="Home"
+          to="/resume"
+          name="Resume"
           style={{
             color: darkTheme.dark ? color.charcoal : color.gray,
             fontWeight: "bold",
@@ -48,7 +48,8 @@ const Folio = () => {
             target.style.color = darkTheme.dark ? color.charcoal : color.gray;
           }}
         >
-          <Icon name="home" size={size.small as IconSizeProp} link></Icon>
+          Resume
+          {/* <Icon name="home" size={size.small as IconSizeProp} link></Icon> */}
         </Menu.Item>
       </div>
     </div>

@@ -21,7 +21,7 @@ const Navigation = () => {
         style={{ margin: "0em", padding: "1em" }}
         inverted={darkTheme.dark}
       >
-        <Menu.Menu>
+        {/* <Menu.Menu>
           <Link to="/">
             <Menu.Item name="Home">Home</Menu.Item>
           </Link>
@@ -31,7 +31,7 @@ const Navigation = () => {
           <Link to="/blog">
             <Menu.Item name="Blog">Blog</Menu.Item>
           </Link>
-        </Menu.Menu>
+        </Menu.Menu> */}
 
         <Menu.Menu>
           <Link to="/folio">
