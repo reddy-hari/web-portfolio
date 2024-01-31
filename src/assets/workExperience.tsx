@@ -1,7 +1,7 @@
 import finra from "./companyLogos/finra.png";
 import microsoft from "./companyLogos/microsoft.png";
 import utari from "./companyLogos/utari.png";
-import allianz from "./companyLogos/allianz.png";
+import accenture from "./companyLogos/accenture.png";
 import gomo from "./companyLogos/gomo.png";
 
 export const workExperience = [
@@ -24,6 +24,9 @@ export const workExperience = [
       "Collaborated with stakeholders to gather requirements and continuously improved the tool's functionality, leading to a 15% increase in user productivity.",
       "Collaborated with cross-functional teams, contributing to a cohesive and productive work environment, resulting in a 20% increase in team efficiency.",
       "Utilized a comprehensive tech stack including React, TypeScript, Redux Toolkit, Thunk, RTK, Java, Spring Boot, AWS, Jenkins, and PostgreSQL across all teams, enabling seamless integration and development processes.",
+    ],
+    tools: [
+      "react", 
     ],
     logo: finra,
   },
@@ -60,10 +63,9 @@ export const workExperience = [
     logo: utari,
   },
   {
-    company: "Allianz",
-    payroll: "Accenture",
+    company: "Accenture",
     title: "Software Development Engineer",
-    jobType: "Contract",
+    jobType: "Full Time",
     start: new Date("May 2015"),
     end: new Date("December 2017"),
     roles: [
@@ -75,7 +77,7 @@ export const workExperience = [
       "Worked on AJAX implementation for retrieving the content and displaying it without reloading the existing page.",
       "Contributed to the application involving Java Spring Boot, MySQL, and the WebLogic server.",
     ],
-    logo: allianz,
+    logo: accenture,
   },
   {
     company: "GO MO Group",

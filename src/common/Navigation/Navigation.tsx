@@ -45,7 +45,7 @@ const Navigation = () => {
               <Icon
                 name="moon outline"
                 size={size.small as IconSizeProp}
-                color={color.white as SemanticCOLORS}
+                color={color.grey as SemanticCOLORS}
                 link
               />
             ) : (

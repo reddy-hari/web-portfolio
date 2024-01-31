@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Navigation from "../../common/Navigation";
 import {
   Grid,
@@ -9,25 +9,58 @@ import {
   Icon,
   SemanticICONS,
 } from "semantic-ui-react";
+import { useMediaQuery } from "react-responsive";
 import { degrees, certificates } from "../../assets/education";
 import { workSummary, workExperience } from "../../assets/workExperience";
 import { color } from "../../constants/constants";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store/store";
+import Marquee from "../../common/Marquee";
+
+
+const technologies: SemanticICONS[] = [
+  "js",
+  "html5",
+  "css3",
+  "react",
+  "angular",
+  "vuejs",
+  "node",
+  "aws",
+  "git",
+  "github",
+  "bitbucket",
+  "jenkins",
+  "npm",
+  "docker",
+  "chrome",
+
+];
 
 const Resume = () => {
   const darkTheme = useSelector((state: RootState) => state.theme);
+  const isSmallScreen = useMediaQuery({ maxWidth: 1200 });
+  const [key, setKey] = useState(0);
+
+  useEffect(() => {
+    setKey((prevKey) => prevKey + 1);
+  }, [isSmallScreen]);
+
+  const educationCardColumn = isSmallScreen ? 16 : 4;
+  const experienceCardColumn = isSmallScreen ? 16 : 12;
 
   return (
-    <div>
+    <div style={{ width: "100%" }}>
       <Navigation />
       <section
+        key={key}
         style={{
           padding: "1em",
           color: darkTheme.dark ? color.white : color.charcoal,
+          width: "100%",
         }}
       >
-        <Grid padded relaxed="very">
+        <Grid padded relaxed="very" stackable>
           <Grid.Row columns={1} centered>
             <Item.Group>
               <h1>Curriculum Vitae</h1>
@@ -38,7 +71,7 @@ const Resume = () => {
               <Item.Group relaxed="very">
                 <h3>Summary</h3>
                 <hr></hr>
-                <Item>
+                <Item style={{ textAlign: "justify" }}>
                   <List bulleted>
                     {workSummary.map((ws) => {
                       return <List.Item key={ws}>{ws}</List.Item>;
@@ -46,16 +79,24 @@ const Resume = () => {
                   </List>
                 </Item>
               </Item.Group>
+              <Marquee iconNames={technologies}></Marquee>
             </Grid.Column>
           </Grid.Row>
+          {/* <Grid.Row columns={1}>
+            <Item.Group relaxed="very">
+            </Item.Group>
+          </Grid.Row> */}
           <Grid.Row columns={2}>
-            <Grid.Column width={12}>
+            <Grid.Column width={experienceCardColumn}>
               <h3>Experience</h3>
               <hr></hr>
               <Item.Group divided relaxed="very">
                 {workExperience.map((ex, index) => {
                   return (
-                    <Item key={ex.company + index}>
+                    <Item
+                      key={ex.company + index}
+                      style={{ textAlign: "justify" }}
+                    >
                       <Item.Image size="tiny" src={ex.logo} />
                       <Item.Content>
                         <Item.Meta
@@ -115,11 +156,11 @@ const Resume = () => {
                               }}
                             >
                               <span>{ex.jobType}</span>
-                              {ex.payroll ? (
+                              {/* {ex.payroll ? (
                                 <span style={{ fontSize: ".79em" }}>
                                   {`| via ${ex.payroll}`}
                                 </span>
-                              ) : null}
+                              ) : null} */}
                             </span>
                           </span>
                         </Item.Meta>
@@ -144,12 +185,16 @@ const Resume = () => {
                   );
                 })}
               </Item.Group>
+              <hr></hr>
             </Grid.Column>
 
-            <Grid.Column width={4}>
+            <Grid.Column width={educationCardColumn}>
               <Card
+                fluid
                 style={{
                   background: darkTheme.dark ? color.gray : color.white,
+                  width: "100%",
+                  boxShadow: isSmallScreen ? "none" : "1px",
                 }}
               >
                 <Card.Content>
@@ -191,8 +236,11 @@ const Resume = () => {
                 </Card.Content>
               </Card>
               <Card
+                fluid
                 style={{
                   background: darkTheme.dark ? color.gray : color.white,
+                  width: "100%",
+                  boxShadow: isSmallScreen ? "none" : "1px",
                 }}
               >
                 <Card.Content>
