@@ -16,26 +16,8 @@ import { color } from "../../constants/constants";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store/store";
 import Marquee from "../../common/Marquee";
-
-
-const technologies: SemanticICONS[] = [
-  "js",
-  "html5",
-  "css3",
-  "react",
-  "angular",
-  "vuejs",
-  "node",
-  "aws",
-  "git",
-  "github",
-  "bitbucket",
-  "jenkins",
-  "npm",
-  "docker",
-  "chrome",
-
-];
+import CustomIcons from "../../constants/customIcons";
+import { ReactComponent as CertificateIcon } from "../../../src/assets/svg/certificate.svg";
 
 const Resume = () => {
   const darkTheme = useSelector((state: RootState) => state.theme);
@@ -63,14 +45,24 @@ const Resume = () => {
         <Grid padded relaxed="very" stackable>
           <Grid.Row columns={1} centered>
             <Item.Group>
-              <h1>Curriculum Vitae</h1>
+              <h1
+                style={{
+                  fontFamily: "Old English Text MT, Times New Roman, serif",
+                }}
+              >
+                Curriculum Vitae
+              </h1>
             </Item.Group>
           </Grid.Row>
           <Grid.Row columns={1}>
             <Grid.Column>
-              <Item.Group relaxed="very">
-                <h3>Summary</h3>
-                <hr></hr>
+              <Item.Group>
+                <div style={{ display: "flex", alignItems: "center" }}>
+                  <h3 style={{ marginRight: "0.5em" }}>Summary</h3>
+                  <hr
+                    style={{ flexGrow: 1, borderBottom: "1px solid black" }}
+                  />
+                </div>
                 <Item style={{ textAlign: "justify" }}>
                   <List bulleted>
                     {workSummary.map((ws) => {
@@ -79,7 +71,7 @@ const Resume = () => {
                   </List>
                 </Item>
               </Item.Group>
-              <Marquee iconNames={technologies}></Marquee>
+              <Marquee iconNames={CustomIcons}></Marquee>
             </Grid.Column>
           </Grid.Row>
           {/* <Grid.Row columns={1}>
@@ -212,12 +204,23 @@ const Resume = () => {
                           <Feed.Content>
                             <List vertical="true" size="small">
                               <List.Item>
-                                <Feed.Label>
-                                  {degree.course} | {degree.major}
-                                </Feed.Label>
+                                <Feed.Label>{degree.university}</Feed.Label>
                               </List.Item>
                               <List.Item>
-                                <Feed.Label>{degree.university}</Feed.Label>
+                                <Feed.Label
+                                  style={{
+                                    display: "flex",
+                                    alignItems: "center",
+                                  }}
+                                >
+                                  <CertificateIcon
+                                    style={{
+                                      marginRight: "0.25em",
+                                      flexShrink: 0,
+                                    }}
+                                  />
+                                  {degree.course} in {degree.major}
+                                </Feed.Label>
                               </List.Item>
                               <List.Item>
                                 <Feed.Label>
@@ -257,7 +260,18 @@ const Resume = () => {
                         <Feed.Event>
                           <Feed.Content>
                             <List vertical="true" size="small">
-                              <List.Item>
+                              <List.Item
+                                style={{
+                                  display: "flex",
+                                  alignItems: "center",
+                                }}
+                              >
+                                <CertificateIcon
+                                  style={{
+                                    marginRight: "0.25em",
+                                    flexShrink: 0,
+                                  }}
+                                />
                                 <a
                                   href={certificate.link}
                                   style={{ textDecoration: "none" }}

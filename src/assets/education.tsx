@@ -1,9 +1,9 @@
 export const degrees = [
   {
     university: "The University of Texas at Arlington",
-    course: "Masters",
+    course: "Masters'",
     major: "Computer Science & Engineering",
-    graduated: "2019",
+    graduated: "2018 - 2019",
     accolades: [
       "1400 NCTTA Rating @ Texas Wesleyan Tournament 2019",
       "The ShortHorn Student Newspaper Columnist",
@@ -12,9 +12,9 @@ export const degrees = [
   },
   {
     university: "University of Puné",
-    course: "Bachelors",
+    course: "Bachelors'",
     major: "Computer Engineering",
-    graduated: "2014",
+    graduated: "2010 - 2014",
     accolades: [
       "Make My Movie 2.0 Winner @ Kanishk 2014",
       "Table Tennis Runner Up @ Sangarsh 2014",

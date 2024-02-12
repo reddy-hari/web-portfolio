@@ -6,7 +6,7 @@
 
 .marquee-content {
   display: inline-block;
-  animation: marquee-animation 20s linear infinite;
+  animation: marquee-animation 50s linear infinite;
   width: 100%;
 }
 
@@ -15,10 +15,10 @@
 }
 
 @keyframes marquee-animation {
-  from {
+  0% {
     transform: translateX(100%);
   }
-  to {
+  100% {
     transform: translateX(-100%);
   }
 }
