@@ -1,23 +1,23 @@
-import React, { useEffect, useState } from "react";
-import Navigation from "../../common/Navigation";
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { useMediaQuery } from "react-responsive";
 import {
-  Grid,
-  Item,
-  List,
   Card,
   Feed,
+  Grid,
   Icon,
-  SemanticICONS,
+  Item,
+  List,
+  SemanticICONS
 } from "semantic-ui-react";
-import { useMediaQuery } from "react-responsive";
-import { degrees, certificates } from "../../assets/education";
-import { workSummary, workExperience } from "../../assets/workExperience";
-import { color } from "../../constants/constants";
-import { useSelector } from "react-redux";
-import { RootState } from "../../store/store";
-import Marquee from "../../common/Marquee";
-import CustomIcons from "../../constants/customIcons";
 import { ReactComponent as CertificateIcon } from "../../../src/assets/svg/certificate.svg";
+import { certificates, degrees } from "../../assets/education";
+import { workExperience } from "../../assets/workExperience";
+import Navigation from "../../common/Navigation";
+import { color } from "../../constants/constants";
+import { RootState } from "../../store/store";
+import CVHeader from "./Header";
+import Summary from "./Summary";
 
 const Resume = () => {
   const darkTheme = useSelector((state: RootState) => state.theme);
@@ -45,39 +45,14 @@ const Resume = () => {
         <Grid padded relaxed="very" stackable>
           <Grid.Row columns={1} centered>
             <Item.Group>
-              <h1
-                style={{
-                  fontFamily: "Old English Text MT, Times New Roman, serif",
-                }}
-              >
-                Curriculum Vitae
-              </h1>
+              <CVHeader />
             </Item.Group>
           </Grid.Row>
           <Grid.Row columns={1}>
             <Grid.Column>
-              <Item.Group>
-                <div style={{ display: "flex", alignItems: "center" }}>
-                  <h3 style={{ marginRight: "0.5em" }}>Summary</h3>
-                  <hr
-                    style={{ flexGrow: 1, borderBottom: "1px solid black" }}
-                  />
-                </div>
-                <Item style={{ textAlign: "justify" }}>
-                  <List bulleted>
-                    {workSummary.map((ws) => {
-                      return <List.Item key={ws}>{ws}</List.Item>;
-                    })}
-                  </List>
-                </Item>
-              </Item.Group>
-              <Marquee iconNames={CustomIcons}></Marquee>
+              <Summary isSmallScreen={isSmallScreen} />
             </Grid.Column>
           </Grid.Row>
-          {/* <Grid.Row columns={1}>
-            <Item.Group relaxed="very">
-            </Item.Group>
-          </Grid.Row> */}
           <Grid.Row columns={2}>
             <Grid.Column width={experienceCardColumn}>
               <h3>Experience</h3>
@@ -89,73 +64,58 @@ const Resume = () => {
                       key={ex.company + index}
                       style={{ textAlign: "justify" }}
                     >
-                      <Item.Image size="tiny" src={ex.logo} />
                       <Item.Content>
                         <Item.Meta
                           style={{
                             color: darkTheme.dark
                               ? color.white
                               : color.charcoal,
-                            display: "flex",
-                            justifyContent: "space-between",
+                            // display: "flex",
+                            // justifyContent: "space-between",
                           }}
                         >
-                          <span
+                          <div
                             style={{
                               fontSize: "1.5em",
-                              color: darkTheme.dark
-                                ? color.white
-                                : color.charcoal,
+                              paddingBottom: "0.5em",
                             }}
                           >
                             {ex.company}
-                          </span>
-                          <span style={{ fontSize: ".9em" }}>{ex.title}</span>
-                        </Item.Meta>
-                        <Item.Meta
-                          style={{
-                            color: darkTheme.dark
-                              ? color.white
-                              : color.charcoal,
-                            fontSize: ".8em",
-                            paddingTop: ".5em",
-                            paddingBottom: ".25em",
-                            display: "flex",
-                            justifyContent: "space-between",
-                          }}
-                        >
-                          <span>
-                            <Icon name={"checked calendar" as SemanticICONS} />
-                            {ex.end
-                              ? ` ${ex.start.toLocaleString("en-US", {
-                                  month: "long",
-                                  year: "numeric",
-                                })} - ${ex.end.toLocaleString("en-US", {
-                                  month: "long",
-                                  year: "numeric",
-                                })}`
-                              : ` Since ${ex.start.toLocaleString("en-US", {
-                                  month: "long",
-                                  year: "numeric",
-                                })}`}
-                          </span>
-                          <span style={{ flex: 1, textAlign: "right" }}>
-                            <span
-                              style={{
-                                color: darkTheme.dark
-                                  ? color.white
-                                  : color.charcoal,
-                              }}
-                            >
-                              <span>{ex.jobType}</span>
-                              {/* {ex.payroll ? (
-                                <span style={{ fontSize: ".79em" }}>
-                                  {`| via ${ex.payroll}`}
-                                </span>
-                              ) : null} */}
+                          </div>
+                          <div
+                            style={{
+                              fontSize: "1em",
+                              paddingBottom: "0.5em",
+                            }}
+                          >
+                            {ex.title} {/* | {ex.jobType} */}
+                          </div>
+                          <div
+                            style={{
+                              fontSize: ".75em",
+                              paddingBottom: "0.5em",
+                            }}
+                          >
+                            <span>
+                              <Icon
+                                name={"checked calendar" as SemanticICONS}
+                              />
+                              {ex.end
+                                ? ` ${ex.start.toLocaleString("en-US", {
+                                    month: "long",
+                                    year: "numeric",
+                                  })} - ${ex.end.toLocaleString("en-US", {
+                                    month: "long",
+                                    year: "numeric",
+                                  })}`
+                                : ` Since ${ex.start.toLocaleString("en-US", {
+                                    month: "long",
+                                    year: "numeric",
+                                  })}`}
                             </span>
-                          </span>
+                          </div>
                         </Item.Meta>
+
                         <Item.Description>
                           <List bulleted>
                             {ex.roles.map((role) => (
@@ -307,3 +267,6 @@ const Resume = () => {
 };
 
 export default Resume;
+
+
+// below 500px width - relative font reduction or disable viewing

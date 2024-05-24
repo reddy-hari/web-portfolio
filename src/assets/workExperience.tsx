@@ -3,14 +3,15 @@ import microsoft from "./companyLogos/microsoft.png";
 import utari from "./companyLogos/utari.png";
 import accenture from "./companyLogos/accenture.png";
 import gomo from "./companyLogos/gomo.png";
+import zionsbancorp from "./companyLogos/zions.png";
 
 export const workExperience = [
   {
-    company: "Financial Industry Regulatory Authority",
+    company: "Zions Bancorporation",
     payroll: "Unisys",
     title: "Full Stack Developer",
-    jobType: "Contract",
-    start: new Date("March 2022"),
+    jobType: "Full Time",
+    start: new Date("March 2024"),
     end: null,
     roles: [
       "Developed the RAAS CLI tool for Report Creation using Node & TypeScript, including parsers to extract text from undelimited data and converting it into pipe-separated values in the FINRA Unified Analytics Format.",
@@ -25,8 +26,32 @@ export const workExperience = [
       "Collaborated with cross-functional teams, contributing to a cohesive and productive work environment, resulting in a 20% increase in team efficiency.",
       "Utilized a comprehensive tech stack including React, TypeScript, Redux Toolkit, Thunk, RTK, Java, Spring Boot, AWS, Jenkins, and PostgreSQL across all teams, enabling seamless integration and development processes.",
     ],
-    tools: [
-      "react", 
+    techStack: [
+      "react", "spring boot"
+    ],
+    logo: zionsbancorp,
+  },
+  {
+    company: "Financial Industry Regulatory Authority",
+    title: "Full Stack Developer",
+    jobType: "Contract",
+    start: new Date("March 2022"),
+    end: new Date("March 2024"),
+    roles: [
+      "Developed the RAAS CLI tool for Report Creation using Node & TypeScript, including parsers to extract text from undelimited data and converting it into pipe-separated values in the FINRA Unified Analytics Format.",
+      "Facilitated Data-Marting and Reporting via Power BI, resulting in Possession or Control (POC) reports, leading to a 25% increase in data accessibility and insights for stakeholders.",
+      "Collaborated with business stakeholders to ensure the tool met their requirements and was user-friendly, achieving a 90% satisfaction rate among end-users.",
+      "Contributed to the development of features for the Data Services Query Engine using React, Redux Toolkit, Spring Boot & PostgreSQL, with a focus on building endpoints that connected to the S3 database and extracted data.",
+      "Provided JSON results to be consumed by internal tech teams, enhancing data accessibility and integration, resulting in a 30% reduction in data retrieval time.",
+      "Worked closely with org verticals to understand their needs and ensure seamless data retrieval and delivery, resulting in a 20% increase in data accuracy and efficiency.",
+      "Drove the development of features for the STS (ETL) tool using React, TypeScript, Spring Boot, PostgreSQL & AWS, enabling tech teams to define and set up data flows by combining multiple data sources, applying filters, and writing to specified locations.",
+      "Leveraged Spark to support large-scale data processing and transformation, achieving a 40% improvement in data processing speed.",
+      "Collaborated with stakeholders to gather requirements and continuously improved the tool's functionality, leading to a 15% increase in user productivity.",
+      "Collaborated with cross-functional teams, contributing to a cohesive and productive work environment, resulting in a 20% increase in team efficiency.",
+      "Utilized a comprehensive tech stack including React, TypeScript, Redux Toolkit, Thunk, RTK, Java, Spring Boot, AWS, Jenkins, and PostgreSQL across all teams, enabling seamless integration and development processes.",
+    ],
+    techStack: [
+      "react",
     ],
     logo: finra,
   },
@@ -92,6 +117,9 @@ export const workExperience = [
       "Used CMS such as WordPress and JS libraries for web development.",
       "Implemented services to consume REST APIs using Java Spring MVC.",
       "Extensively involved in database activities like designing tables, SQL queries using MS SQL Server in the application.",
+    ],
+    techStack: [
+      "WordPress", "PHP",
     ],
     logo: gomo,
   },
